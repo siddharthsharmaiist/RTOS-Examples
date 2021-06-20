@@ -22,30 +22,28 @@ void setup()
 void redLedControllerTask(void *pvParameters)
 {
   pinMode(RED,OUTPUT);
-
   while(1)
   {
-   // Serial.println("This is RED");
+   digitalWrite(RED,digitalRead(RED)^1); 
   }
 }
 
 void blueLedControllerTask(void *pvParameters)
 {
-    pinMode(BLUE,OUTPUT);
-    while(1)
-    {
-    //  Serial.print("This is BLUE");
-    }
+  pinMode(BLUE,OUTPUT);
+  while(1)
+  {
+   digitalWrite(BLUE,digitalRead(BLUE)^1); 
+  }
 }
 
 void yellowLedControllerTask(void *pvParameters)
 {
-   pinMode(YELLOW,OUTPUT);
+  pinMode(YELLOW,OUTPUT);
   while(1)
   {
-  //  Serial.println("This is YELLOW");
+    digitalWrite(YELLOW,digitalRead(YELLOW)^1);
   }
 }
 
-void loop()
-{}
+void loop(){}
